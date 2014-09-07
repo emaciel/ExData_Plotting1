@@ -12,8 +12,10 @@ data_graph$Global_active_power <- as.numeric(as.character(data_graph$Global_acti
 
 data_graph <- data_graph[ data_graph$Global_active_power != missing_values,]             # remove invalid ? entries
 
-png(filename = "plot1.png", width = 480, height = 480, units = "px")
-par(mar=c(6,4,2,2))
+png(filename = "plot1.png", width = 480, height = 480, units = "px")   # open png file to save
+par(mar=c(6,4,2,2))     # set margins
+
+# plot histogram
 hist(data_graph$Global_active_power, xlab="Global Active Power (kilowatts)", ylab="Frequency", main="Global Active Power", col="red")
-dev.off()
+dev.off()       # save to file and close it
 

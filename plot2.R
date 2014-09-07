@@ -14,8 +14,9 @@ data_graph$Global_active_power <- as.numeric(as.character(data_graph$Global_acti
 
 data_graph <- data_graph[ data_graph$Global_active_power != missing_values,]             # remove invalid ? entries
 
-png(filename = "plot2.png", width = 480, height = 480, units = "px")
-par(mar=c(6,4,2,2))
-par(pch=".")
+png(filename = "plot2.png", width = 480, height = 480, units = "px")   # open png file to save
+par(mar=c(6,4,2,2))     # set margins
+par(pch=".")            # set symbol used for plotting . (dot)
+# plot line
 plot(data_graph$Time, data_graph$Global_active_power, type="o", xlab="",ylab="Global Active Power (kilowatts)")
-dev.off()
+dev.off()       # save to file and close it
